@@ -1,50 +1,64 @@
-
 from pgmpy.models import BayesianModel
 from pgmpy.factors.discrete import TabularCPD
-from pgmpy.utils import get_example_model
+from pgmpy.inference import VariableElimination
+import numpy as np
 
-cancer_model = BayesianModel([('Pollution', 'Cancer'),
-                              ('Smoker', 'Cancer'),
-                              ('Cancer', 'Xray'),
-                              ('Cancer', 'Dyspnoea')])
-
-cpd_poll = TabularCPD(variable='Pollution', variable_card=2,
-                      values=[[0.9], [0.1]])
-cpd_smoke = TabularCPD(variable='Smoker', variable_card=2,
-                       values=[[0.3], [0.7]])
-cpd_cancer = TabularCPD(variable='Cancer', variable_card=2,
-                        values=[[0.03, 0.05, 0.001, 0.02],
-                                [0.97, 0.95, 0.999, 0.98]],
-                        evidence=['Smoker', 'Pollution'],
-                        evidence_card=[2, 2])
-cpd_xray = TabularCPD(variable='Xray', variable_card=2,
-                      values=[[0.9, 0.2], [0.1, 0.8]],
-                      evidence=['Cancer'], evidence_card=[2])
-cpd_dysp = TabularCPD(variable='Dyspnoea', variable_card=2,
-                      values=[[0.65, 0.3], [0.35, 0.7]],
-                      evidence=['Cancer'], evidence_card=[2])
-
-print("hi love")
+bayesNet = BayesianModel()
+# bayesNet.add_node("constantFunctionGraph")
+bayesNet.add_node("intercept")
+bayesNet.add_node("posIntercept")
+bayesNet.add_node("negIntercept")
+bayesNet.add_node("linearFunctionGraph")
+bayesNet.add_node("slope")
+bayesNet.add_node("posSlope")
+bayesNet.add_node("zeroSlope")
+bayesNet.add_node("negSlope")
 
 
-# Associating the parameters with the model structure.
-cancer_model.add_cpds(cpd_poll, cpd_smoke, cpd_cancer, cpd_xray, cpd_dysp)
 
-# Checking if the cpds are valid for the model.
-cancer_model.check_model()
+bayesNet.add_edge("intercept", "linearFunctionGraph")
+bayesNet.add_edge("slope", "linearFunctionGraph")
+bayesNet.add_edge("posSlope", "slope")
+bayesNet.add_edge("zeroSlope", "slope")
+bayesNet.add_edge("negSlope", "slope")
+bayesNet.add_edge("posIntercept", "intercept")
+bayesNet.add_edge("negIntercept", "intercept")
+bayesNet.add_edge("intercept", "constantFunctionGraph")
 
-# Check for d-separation between variables
-print(cancer_model.is_active_trail('Pollution', 'Smoker'))
-print(cancer_model.is_active_trail('Pollution', 'Smoker', observed=['Cancer']))
+cpd_PI = TabularCPD('posIntercept', 2, values=[[.95], [.05]])
+cpd_NI = TabularCPD('negIntercept', 2, values=[[.85], [.15]])
+cpd_PS = TabularCPD('posSlope', 2, values=[[.90], [.10]])
+cpd_ZS = TabularCPD('zeroSlope', 2, values=[[.90], [.10]])
+cpd_NS = TabularCPD('negSlope', 2, values=[[.90], [.10]])
 
 
-# Get all d-connected nodes
+cpd_LF = TabularCPD('linearFunctionGraph', 2, values=[[0.98, .88, .95, .6], [.02, .12, .05, .40]],
+                   evidence=['intercept', 'slope'], evidence_card=[2, 2])
 
-print(cancer_model.active_trail_nodes('Pollution'))
+cpd_CF = TabularCPD('constantFunctionGraph', 2, values=[[0.98, .88], [.02, .12]],
+                   evidence=['intercept'], evidence_card=[2])
 
-# List local independencies for a node
+print(cpd_CF)
 
-print(cancer_model.local_independencies('Xray'))
+cpd_I = TabularCPD('intercept', 2, values=[[0.98, .88, .95, .6], [.02, .12, .05, .40]],
+                   evidence=['negIntercept', 'posIntercept'], evidence_card=[2, 2])
 
-print(cancer_model.get_independencies())
 
+cpd_S = TabularCPD('slope', 2,
+                   values=[[0.96, .86, .94, .82, .24, .15, .10, .05], [.04, .14, .06, .18, .76, .85, .90, .95]],
+                   evidence=['posSlope', 'zeroSlope', 'negSlope'], evidence_card=[2, 2,2])
+
+
+
+
+
+bayesNet.add_cpds(cpd_PS, cpd_ZS, cpd_NS, cpd_S, cpd_PI, cpd_NI, cpd_I, cpd_LF, cpd_CF)
+
+bayesNet.check_model()
+print("Model is correct.")
+
+solver = VariableElimination(bayesNet)
+
+result = solver.query(variables=['slope'])
+# print("R", result['R'].values[1])
+print(result.values[1])
