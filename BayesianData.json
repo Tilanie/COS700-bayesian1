@@ -1,0 +1,64 @@
+{
+    "concepts": [
+        {
+            "id": 3,
+            "description": "c3",
+            "children":[
+                {
+                    "id": 1,
+                    "description": "c1"
+                },
+                {
+                    "id": 2,
+                    "description": "c2"
+                }
+            ],
+            "dimensions": [2,2],
+            "terminal": 0,
+            "probability_true" : [0.98, 0.98, 0.12, 0.12],
+            "probability_false" : [0.02, 0.02, 0.88, 0.88]
+        },
+
+        {
+            "id": 4,
+            "description": "c4",
+            "children":[
+                {
+                    "id": 1,
+                    "description": "c1"
+                },
+                {
+                    "id": 2,
+                    "description": "c2"
+                }
+            ],
+            "dimensions": [2,2],
+            "terminal": 0,
+            "probability_true" : [0.98, 0.98, 0.12, 0.12],
+            "probability_false" : [0.02, 0.02, 0.88, 0.88]
+        },
+
+        {
+            "id": 1,
+            "description": "c1",
+            "children":[
+                
+            ],
+            "dimensions": [2,2],
+            "terminal": 1,
+            "probability_true" : [1],
+            "probability_false" : [0]
+        },
+        {
+            "id": 2,
+            "description": "c2",
+            "children":[
+                
+            ],
+            "dimensions": [2,2],
+            "terminal": 1,
+            "probability_true" : [1],
+            "probability_false" : [0]
+        }
+    ]
+}
