@@ -17,6 +17,7 @@ class Bayesian:
         self.data = json.load(f)
         
         for i in self.data['concepts']:
+            # concept = Concept()
             children = []
             self.network.append(i)
             self.bayesNet.add_node(i["description"])

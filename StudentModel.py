@@ -4,5 +4,5 @@ from DynamicKnowledge import DynamicKnowledge
 class StudentModel:
     def __init__(self):
         self.id = 0
-        # self.StaticKnowledge = StaticKnowledge()
-        self.DynamicKnowledge = DynamicKnowledge()
+        self.static_knowledge = StaticKnowledge()
+        self.dynamic_knowledge = DynamicKnowledge()
