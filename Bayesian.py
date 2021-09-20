@@ -38,12 +38,25 @@ class Bayesian:
         
              
         for k in self.cpd_list:
-            print(k)
+            # print(k)
             self.bayesNet.add_cpds(k)
             
             
         self.bayesNet.check_model()
+        self.solver = VariableElimination(self.bayesNet)
+      
+        
+    
+
         f.close()
+
+    def predictConcept(self, concept):
+        result = self.solver.query(variables=[concept])
+        
+        return result.values
+
+
+
         
 
 

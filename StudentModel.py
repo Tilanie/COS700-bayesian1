@@ -6,3 +6,8 @@ class StudentModel:
         self.id = 0
         self.static_knowledge = StaticKnowledge()
         self.dynamic_knowledge = DynamicKnowledge()
+
+    def predictStudentKnowledge(self, concept):
+        vals = self.dynamic_knowledge.predictStudentKnowledge(concept)
+        
+        return vals

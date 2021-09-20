@@ -10,3 +10,9 @@ class StudentKnowledge:
         self.NeuralNetwork = NeuralNetwork()
         self.FuzzyKnowledgePredictor = FuzzyKnowledgePredictor()
     # Could implemented as either a Bayesian or a Neural Network
+
+    def predictKnowledge(self, concept):
+        vals = self.Bayesian.predictConcept(concept)
+        # print("Student Knowledge")
+        # print(vals)
+        return vals

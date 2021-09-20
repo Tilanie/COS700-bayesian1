@@ -11,38 +11,51 @@ from sklearn.metrics import confusion_matrix,accuracy_score
 
 
 class KNearestNeighbour:
-    def __init__(self):
-        self.stereotypeModel = self.StereotypeInitializor()    
+    def __init__(self, user_record):
+        self.user_record = user_record
+        self.skill = self.StereotypeInitializor()  
+
+    def  getSkill(self):
+        return self.skill
        
     def StereotypeInitializor(self):
-        dataset = pd.read_csv('Resources/Social_Network_Ads.csv')
-        X = dataset.iloc[:, [1, 2, 3, 4, 5]].values
-        y = dataset.iloc[:, 6].values
-            
-            
-        print(X)
-        print(y)
+        dataset = pd.read_csv('Resources/Student_Level.csv')
+        X = dataset.iloc[:, [1, 2, 3, 4, 5, 6]].values
+        y = dataset.iloc[:, 7].values
+
+        
         le = LabelEncoder()
-        X[:,0] = le.fit_transform(X[:,0])
-        X[:,0] = le.fit_transform(X[:,3])
+   
+        X[:,1] = le.fit_transform(X[:,1])
+        # X[:,0] = le.fit_transform(X[:,3])
             
+        
+        predict_X = self.user_record
+
+        predict_X[1] = le.fit_transform([predict_X[1]])[0]
+        # predict_X[0] = le.fit_transform([predict_X[3]])[0]
+        
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
             
+      
         sc = StandardScaler()
+    
+
         X_train = sc.fit_transform(X_train)
+
+        
+        predict_X = sc.transform([predict_X])[0]
         X_test = sc.transform(X_test)
             
         classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
         classifier.fit(X_train, y_train)
             
-        y_pred = classifier.predict(X_test)
+        y_pred = classifier.predict([predict_X])
             
             
-        cm = confusion_matrix(y_test, y_pred)
-        ac = accuracy_score(y_test,y_pred)
-            
-        print(cm)
-        print(ac)        
+        return y_pred[0]
+        # print(cm)
+        # print(ac)        
             
             
    
