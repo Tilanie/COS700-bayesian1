@@ -2,8 +2,8 @@ from TeachingHistory import ConceptHistory, TestHistory, UnitHistory
 from SkillPredictor import SkillPredictor
 
 class StudentCharacteristics:
-    def __init__(self):
-        self.PersonalData = self.PersonalData("Tilanie", 12, "tbresler", "pass", "t@gmail.com", "English", "Pretoria", "SA")
+    def __init__(self, name, id, username, password, email, language, city, country):
+        self.PersonalData = self.PersonalData(name, id, username, password, email, language, city, country)
         self.user_record = [11, 'Female', 24, 1 ,0, 0.50]
         self.PerformanceData = self.PerformanceData(self.user_record)
         self.TeachingHistory = self.TeachingHistory()

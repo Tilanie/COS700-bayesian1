@@ -24,14 +24,24 @@ class Bayesian:
             for j in i["children"]:
                 self.bayesNet.add_edge(j["description"], i["description"])
                 children.append(j["description"])
-                
-         
+        
+            c = len(i["children"])
+            d = len(i["dimensions"])
+            
+            c = 2
             if i["terminal"] == 0:
-                cpd_val = TabularCPD(i["description"], 2, values=[i["probability_true"], i["probability_false"]],
+                # if d < 2:
+                #     v = [i["probability_true"]]
+                # else:
+                v = [i["probability_true"], i["probability_false"]]
+
+               
+                cpd_val = TabularCPD(i["description"], c, values=v,
                    evidence=children, evidence_card=i["dimensions"])
                 self.cpd_list.append(cpd_val)
             else:
-                cpd_val = TabularCPD(i["description"], 2, values=[i["probability_true"], i["probability_false"]])  
+                v = [i["probability_true"], i["probability_false"]]
+                cpd_val = TabularCPD(variable=i["description"], variable_card=c, values=v)  
        
                 self.cpd_list.append(cpd_val)
        
