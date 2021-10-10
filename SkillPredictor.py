@@ -12,7 +12,7 @@ class SkillPredictor:
         
         for i in self.data['concepts']:
             if i["terminal"] == 1:
-                self.knn.getSkill(i["id"])
+                known = self.knn.getSkill(i["id"])
 
         with open('BayesianDataOut.txt', 'w') as outfile:
             json.dump(self.data, outfile)
