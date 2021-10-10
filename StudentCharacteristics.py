@@ -31,7 +31,10 @@ class StudentCharacteristics:
             self.learning_style = ''
             self.init_skill_level = 0
             self.SkillPredictor = SkillPredictor(self.user_record)
-            self.init_skill = self.SkillPredictor.predictSkill()
+            
+
+        def predictSkill(self, data):
+            self.init_skill = self.SkillPredictor.predictSkill(data)
 
             
         

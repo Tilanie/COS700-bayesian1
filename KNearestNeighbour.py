@@ -31,6 +31,8 @@ class KNearestNeighbour:
             
         
         predict_X = self.user_record
+        print("self.user_record")
+        print(self.user_record)
 
         predict_X[1] = le.fit_transform([predict_X[1]])[0]
         # predict_X[0] = le.fit_transform([predict_X[3]])[0]
@@ -51,11 +53,15 @@ class KNearestNeighbour:
         classifier.fit(X_train, y_train)
             
         y_pred = classifier.predict([predict_X])
-            
-            
+
+        print("--------")
+        print(predict_X)  
+        print(y_pred[0])
         return y_pred[0]
         # print(cm)
         # print(ac)        
             
+    def predict(self, predict_x):
+        pass
             
    
