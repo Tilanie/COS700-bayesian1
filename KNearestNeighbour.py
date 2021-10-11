@@ -13,8 +13,8 @@ from sklearn.metrics import confusion_matrix,accuracy_score
 class KNearestNeighbour:
     def __init__(self, user_record):
         self.user_record = user_record
-        self.skill = self.StereotypeInitializor()  
-        self.classifier = None
+        self.classifier = self.StereotypeInitializor()  
+        self.skill = 0
 
     def  getSkill(self):
         return self.skill
@@ -25,53 +25,45 @@ class KNearestNeighbour:
         y = dataset.iloc[:, 7].values
 
         
-        le = LabelEncoder()
+        self.le = LabelEncoder()
    
-        X[:,1] = le.fit_transform(X[:,1])
-        # X[:,0] = le.fit_transform(X[:,3])
-            
+        X[:,1] = self.le.fit_transform(X[:,1])
+   
         
         predict_X = self.user_record
 
-        predict_X[1] = le.fit_transform([predict_X[1]])[0]
+        predict_X[1] = self.le.fit_transform([predict_X[1]])[0]
       
         
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
             
       
-        sc = StandardScaler()
+        self.sc = StandardScaler()
     
 
-        X_train = sc.fit_transform(X_train)
+        X_train = self.sc.fit_transform(X_train)
 
         
-        predict_X = sc.transform([predict_X])[0]
-        X_test = sc.transform(X_test)
+        predict_X = self.sc.transform([predict_X])[0]
+        X_test = self.sc.transform(X_test)
             
-        classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
-        classifier.fit(X_train, y_train)
+        self.classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
+        self.classifier.fit(X_train, y_train)
 
-        self.classifier = classifier
-            
-        y_pred = classifier.predict([predict_X])
+        
+        y_pred = self.classifier.predict([predict_X])
 
-        return y_pred[0]
-        # print(cm)
-        # print(ac)        
+        return self.classifier
+             
             
     def predict(self, data):
         predict_X = self.user_record
         predict_X[0] = data
-        le = LabelEncoder()
 
-        predict_X[1] = le.fit_transform([predict_X[1]])[0]
-            
-        sc = StandardScaler()
-        predict_X = sc.transform([predict_X])[0]
-
+        predict_X[1] = self.le.fit_transform([predict_X[1]])[0]
+ 
+        predict_X = self.sc.transform([predict_X])[0]
+        
         y_pred = self.classifier.predict([predict_X])
 
-        print("--------")
-        print(predict_X)  
-        print(y_pred[0])
         return y_pred[0]

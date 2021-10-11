@@ -3,10 +3,10 @@ from SkillPredictor import SkillPredictor
 
 class StudentCharacteristics:
     def __init__(self, name, id, username, password, email, language, city, country):
-        self.PersonalData = self.PersonalData(name, id, username, password, email, language, city, country)
+        self.personalData = self.PersonalData(name, id, username, password, email, language, city, country)
         self.user_record = [11, 'Female', 24, 1 ,0, 0.50]
-        self.PerformanceData = self.PerformanceData(self.user_record)
-        self.TeachingHistory = self.TeachingHistory()
+        self.performanceData = self.PerformanceData(self.user_record)
+        self.teachingHistory = self.TeachingHistory()
 
         
         
@@ -31,10 +31,12 @@ class StudentCharacteristics:
             self.learning_style = ''
             self.init_skill_level = 0
             self.SkillPredictor = SkillPredictor(self.user_record)
+
+            self.predictSkill()
             
 
-        def predictSkill(self, data):
-            self.init_skill = self.SkillPredictor.predictSkill(data)
+        def predictSkill(self):
+            self.init_skill = self.SkillPredictor.predictSkill()
 
             
         

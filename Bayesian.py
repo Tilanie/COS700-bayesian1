@@ -13,7 +13,7 @@ class Bayesian:
         self.cpd_list = []
         
         self.bayesNet = BayesianModel()
-        f = open('BayesianData.json',)
+        f = open('BayesianDataOut.json',)
         self.data = json.load(f)
         
         for i in self.data['concepts']:
