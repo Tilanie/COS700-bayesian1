@@ -1,11 +1,12 @@
 from KNearestNeighbour import KNearestNeighbour
 import json
-
+from Fuzzy import Fuzzy
 class SkillPredictor:
     def __init__(self, user_record):
         self.user_record = user_record
         self.knn = KNearestNeighbour(self.user_record)
-
+        self.fuzzy = Fuzzy()
+        
     def predictSkill(self):
         f = open('BayesianData.json',)
         self.data = json.load(f)
