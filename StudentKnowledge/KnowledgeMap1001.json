@@ -1,0 +1,2890 @@
+{
+    "concepts": [
+        {
+            "id": 10,
+            "sequence": 5,
+            "description": "Absolute Value",
+            "children": [
+                {
+                    "id": 124,
+                    "description": "Rounding"
+                },
+                {
+                    "id": 19,
+                    "description": "Estimation"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 11,
+            "sequence": 5,
+            "description": "Addition and Subtraction Fractions",
+            "children": [
+                {
+                    "id": 124,
+                    "description": "Rounding"
+                },
+                {
+                    "id": 19,
+                    "description": "Estimation"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 12,
+            "sequence": 1,
+            "description": "Addition and Subtraction Integers",
+            "children": [
+                {
+                    "id": 14,
+                    "description": "Counting Methods"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.09533490047837367
+        },
+        {
+            "id": 13,
+            "sequence": 2,
+            "description": "Conversion of Fraction Decimals Percents",
+            "children": [
+                {
+                    "id": 122,
+                    "description": "Percent Of"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 14,
+            "sequence": 0,
+            "description": "Counting Methods",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 15,
+            "sequence": 0,
+            "description": "Definition Pi",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 16,
+            "sequence": 0,
+            "description": "Divisibility Rules",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 17,
+            "sequence": 1,
+            "description": "Division Fractions",
+            "children": [
+                {
+                    "id": 16,
+                    "description": "Divisibility Rules"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.17871435457775042
+        },
+        {
+            "id": 18,
+            "sequence": 0,
+            "description": "English and Metric Terminology",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 19,
+            "sequence": 4,
+            "description": "Estimation",
+            "children": [
+                {
+                    "id": 124,
+                    "description": "Rounding"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 110,
+            "sequence": 0,
+            "description": "Finding Percents",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 111,
+            "sequence": 0,
+            "description": "Finding Ratios",
+            "children": [
+                {
+                    "id": 19,
+                    "description": "Estimation"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 112,
+            "sequence": 3,
+            "description": "Greatest Common Factor",
+            "children": [
+                {
+                    "id": 16,
+                    "description": "Divisibility Rules"
+                },
+                {
+                    "id": 114,
+                    "description": "Multiplication and Division Integers"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.127763750105305
+        },
+        {
+            "id": 113,
+            "sequence": 3,
+            "description": "Least Common Multiple",
+            "children": [
+                {
+                    "id": 16,
+                    "description": "Divisibility Rules"
+                },
+                {
+                    "id": 114,
+                    "description": "Multiplication and Division Integers"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.39370067918668705
+        },
+        {
+            "id": 114,
+            "sequence": 1,
+            "description": "Multiplication and Division Integers",
+            "children": [
+                {
+                    "id": 16,
+                    "description": "Divisibility Rules"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.7815582961174371
+        },
+        {
+            "id": 115,
+            "sequence": 3,
+            "description": "Multiplication Fractions",
+            "children": [
+                {
+                    "id": 16,
+                    "description": "Divisibility Rules"
+                },
+                {
+                    "id": 114,
+                    "description": "Multiplication and Division Integers"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.1762599281724534
+        },
+        {
+            "id": 116,
+            "sequence": 0,
+            "description": "Number Line",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 117,
+            "sequence": 0,
+            "description": "Order of Operations +,-,/,* () positive reals",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 118,
+            "sequence": 1,
+            "description": "Order of Operations All",
+            "children": [
+                {
+                    "id": 117,
+                    "description": "Order of Operations +,-,/,* () positive reals"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.3241267240578728
+        },
+        {
+            "id": 119,
+            "sequence": 1,
+            "description": "Ordering Positive Decimals",
+            "children": [
+                {
+                    "id": 116,
+                    "description": "Number Line"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.8041030466905951
+        },
+        {
+            "id": 120,
+            "sequence": 0,
+            "description": "Pattern Finding ",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 121,
+            "sequence": 2,
+            "description": "Percent Discount",
+            "children": [
+                {
+                    "id": 122,
+                    "description": "Percent Of"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 122,
+            "sequence": 1,
+            "description": "Percent Of 2",
+            "children": [
+                {
+                    "id": 16,
+                    "description": "Divisibility Rules"
+                },
+                {
+                    "id": 110,
+                    "description": "Finding Percents"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.029699169513238477
+        },
+        {
+            "id": 123,
+            "sequence": 0,
+            "description": "Prime Factor",
+            "children": [
+                {
+                    "id": 112,
+                    "description": "Greatest Common Factor"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 124,
+            "sequence": 3,
+            "description": "Rounding",
+            "children": [
+                {
+                    "id": 16,
+                    "description": "Divisibility Rules"
+                },
+                {
+                    "id": 114,
+                    "description": "Multiplication and Division Integers"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.4743109126116115
+        },
+        {
+            "id": 125,
+            "sequence": 0,
+            "description": "Scientific Notation",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 126,
+            "sequence": 1,
+            "description": "Unit Conversion Standard to Metric",
+            "children": [
+                {
+                    "id": 18,
+                    "description": "English and Metric Terminology"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.9015014086403796
+        },
+        {
+            "id": 127,
+            "sequence": 2,
+            "description": "Unit Conversion Within a System",
+            "children": [
+                {
+                    "id": 18,
+                    "description": "English and Metric Terminology"
+                },
+                {
+                    "id": 125,
+                    "description": "Scientific Notation"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.1442398062349004
+        },
+        {
+            "id": 20,
+            "sequence": 6,
+            "description": "Angles - Obtuse, Acute, and Right",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 21,
+            "sequence": 7,
+            "description": "Angles on Parallel Lines Cut by a Transversal",
+            "children": [
+                {
+                    "id": 20,
+                    "description": "Angles - Obtuse, Acute, and Right"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.5809419058172387
+        },
+        {
+            "id": 22,
+            "sequence": 6,
+            "description": "Area Concept",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 23,
+            "sequence": 8,
+            "description": "Area Circle",
+            "children": [
+                {
+                    "id": 22,
+                    "description": "Area Concept"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.45206586534905646
+        },
+        {
+            "id": 24,
+            "sequence": 7,
+            "description": "Area Irregular Figure",
+            "children": [
+                {
+                    "id": 22,
+                    "description": "Area Concept"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.10794435509475586
+        },
+        {
+            "id": 25,
+            "sequence": 7,
+            "description": "Area Parallelogram",
+            "children": [
+                {
+                    "id": 22,
+                    "description": "Area Concept"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.27591791009753974
+        },
+        {
+            "id": 26,
+            "sequence": 7,
+            "description": "Area Rectangle",
+            "children": [
+                {
+                    "id": 22,
+                    "description": "Area Concept"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.900223879859313
+        },
+        {
+            "id": 27,
+            "sequence": 7,
+            "description": "Area Trapezoid",
+            "children": [
+                {
+                    "id": 22,
+                    "description": "Area Concept"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.34229965255376926
+        },
+        {
+            "id": 28,
+            "sequence": 7,
+            "description": "Area Triangle",
+            "children": [
+                {
+                    "id": 22,
+                    "description": "Area Concept"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.35123748944915223
+        },
+        {
+            "id": 29,
+            "sequence": 6,
+            "description": "Calculations with Similar Figures",
+            "children": [
+                {
+                    "id": 214,
+                    "description": "Congruence"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.7896639161331056
+        },
+        {
+            "id": 210,
+            "sequence": 7,
+            "description": "Circle Concep",
+            "children": [
+                {
+                    "id": 15,
+                    "description": "Definition Pi"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.4834329621500043
+        },
+        {
+            "id": 211,
+            "sequence": 6,
+            "description": "Circumference",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 212,
+            "sequence": 6,
+            "description": "Complementary and Supplementary Angles",
+            "children": [
+                {
+                    "id": 20,
+                    "description": "Angles - Obtuse, Acute, and Right"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.07458726442278918
+        },
+        {
+            "id": 213,
+            "sequence": 6,
+            "description": "Concept Volume",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 214,
+            "sequence": 6,
+            "description": "Congruence",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 215,
+            "sequence": 6,
+            "description": "Effect of Changing Dimensions of a Shape Proportionally",
+            "children": [
+                {
+                    "id": 214,
+                    "description": "Congruence"
+                },
+                {
+                    "id": 227,
+                    "description": "Proportion"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.3795875963849882
+        },
+        {
+            "id": 216,
+            "sequence": 6,
+            "description": "Interior Angles Figures with More than 3 Sides",
+            "children": [
+                {
+                    "id": 20,
+                    "description": "Angles - Obtuse, Acute, and Right"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.37333618724776163
+        },
+        {
+            "id": 217,
+            "sequence": 7,
+            "description": "Interior Angles Triangle",
+            "children": [
+                {
+                    "id": 226,
+                    "description": "Properties and Classification Triangles"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.5617927570776956
+        },
+        {
+            "id": 218,
+            "sequence": 9,
+            "description": "Volume Sphere",
+            "children": [
+                {
+                    "id": 213,
+                    "description": "Concept Volume"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.8148915365531588
+        },
+        {
+            "id": 219,
+            "sequence": 7,
+            "description": "Nets of 3D Objects",
+            "children": [
+                {
+                    "id": 22,
+                    "description": "Area Concept"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.5955187335288273
+        },
+        {
+            "id": 220,
+            "sequence": 6,
+            "description": "Parallel and Perpendicular Lines",
+            "children": [
+                {
+                    "id": 20,
+                    "description": "Angles - Obtuse, Acute, and Right"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.6493994482417969
+        },
+        {
+            "id": 221,
+            "sequence": 8,
+            "description": "Perimeter of a Polygon",
+            "children": [
+                {
+                    "id": 211,
+                    "description": "Circumference"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.5398766325066929
+        },
+        {
+            "id": 222,
+            "sequence": 6,
+            "description": "Properties and Classification Polygons with 5 or more sides",
+            "children": [
+                {
+                    "id": 221,
+                    "description": "Perimeter of a Polygon"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 223,
+            "sequence": 6,
+            "description": "Properties and Classification Prism",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 224,
+            "sequence": 6,
+            "description": "Properties and Classification Quadrilaterals",
+            "children": [
+                {
+                    "id": 220,
+                    "description": "Parallel and Perpendicular Lines"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 225,
+            "sequence": 6,
+            "description": "Properties and Classification Rectangular Prisms",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 226,
+            "sequence": 6,
+            "description": "Properties and Classification Triangles",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 227,
+            "sequence": 6,
+            "description": "Proportion",
+            "children": [
+                {
+                    "id": 229,
+                    "description": "Scale Factor"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.04560930208539393
+        },
+        {
+            "id": 228,
+            "sequence": 6,
+            "description": "Pythagorean Theorem",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 229,
+            "sequence": 6,
+            "description": "Scale Factor",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 230,
+            "sequence": 10,
+            "description": "Surface Area Cylinder",
+            "children": [
+                {
+                    "id": 23,
+                    "description": "Area Circle"
+                },
+                {
+                    "id": 219,
+                    "description": "Nets of 3D Objects"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 231,
+            "sequence": 9,
+            "description": "Surface Area of Prism",
+            "children": [
+                {
+                    "id": 219,
+                    "description": "Nets of 3D Objects"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 232,
+            "sequence": 8,
+            "description": "Surface Area Rectangular Prism",
+            "children": [
+                {
+                    "id": 225,
+                    "description": "Properties and Classification Rectangular Prisms"
+                },
+                {
+                    "id": 219,
+                    "description": "Nets of 3D Objects"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.04537909121196104
+        },
+        {
+            "id": 233,
+            "sequence": 8,
+            "description": "Surface Area Sphere",
+            "children": [
+                {
+                    "id": 219,
+                    "description": "Nets of 3D Objects"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 234,
+            "sequence": 10,
+            "description": "Volume Cone",
+            "children": [
+                {
+                    "id": 213,
+                    "description": "Concept Volume"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.4344168117774424
+        },
+        {
+            "id": 235,
+            "sequence": 10,
+            "description": "Volume Cylinder",
+            "children": [
+                {
+                    "id": 213,
+                    "description": "Concept Volume"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.008647837332268482
+        },
+        {
+            "id": 236,
+            "sequence": 10,
+            "description": "Volume Pyramid",
+            "children": [
+                {
+                    "id": 28,
+                    "description": "Area Triangle"
+                },
+                {
+                    "id": 213,
+                    "description": "Concept Volume"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.2529883334749203
+        },
+        {
+            "id": 237,
+            "sequence": 10,
+            "description": "Volume Rectangular Prism",
+            "children": [
+                {
+                    "id": 26,
+                    "description": "Area Rectangle"
+                },
+                {
+                    "id": 213,
+                    "description": "Concept Volume"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.1395311933964633
+        },
+        {
+            "id": 30,
+            "sequence": 15,
+            "description": "Algebraic Solving",
+            "children": [
+                {
+                    "id": 31,
+                    "description": "Combining Like Terms"
+                },
+                {
+                    "id": 315,
+                    "description": "Solving for a variable"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.2785190740868429
+        },
+        {
+            "id": 31,
+            "sequence": 11,
+            "description": "Combining Like Terms",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 32,
+            "sequence": 16,
+            "description": "Equation Solving More Than Two Steps",
+            "children": [
+                {
+                    "id": 30,
+                    "description": "Algebraic Solving"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 33,
+            "sequence": 16,
+            "description": "Equation Solving Two or Fewer Steps",
+            "children": [
+                {
+                    "id": 30,
+                    "description": "Algebraic Solving"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 34,
+            "sequence": 11,
+            "description": "Equivalent Fractions",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 35,
+            "sequence": 11,
+            "description": "Exponents",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 36,
+            "sequence": 13,
+            "description": "Factoring Polynomials Standard",
+            "children": [
+                {
+                    "id": 311,
+                    "description": "Polynomial Factors"
+                },
+                {
+                    "id": 38,
+                    "description": "Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.19813145179052327
+        },
+        {
+            "id": 37,
+            "sequence": 12,
+            "description": "Multiplying non Monomial Polynomials",
+            "children": [
+                {
+                    "id": 38,
+                    "description": "Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.1521462828432919
+        },
+        {
+            "id": 38,
+            "sequence": 11,
+            "description": "Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 39,
+            "sequence": 12,
+            "description": "Picking Equation and Inequality from Choices",
+            "children": [
+                {
+                    "id": 317,
+                    "description": "Substitution"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 310,
+            "sequence": 11,
+            "description": "Picking Expressions From Choices",
+            "children": [
+                {
+                    "id": 38,
+                    "description": "Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.044047233696675625
+        },
+        {
+            "id": 311,
+            "sequence": 12,
+            "description": "Polynomial Factors",
+            "children": [
+                {
+                    "id": 38,
+                    "description": "Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.8587556571342133
+        },
+        {
+            "id": 312,
+            "sequence": 13,
+            "description": "Quadratic Formula to Solve Quadratic Equation",
+            "children": [
+                {
+                    "id": 316,
+                    "description": "Square Root"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 313,
+            "sequence": 11,
+            "description": "Recognize Linear Pattern",
+            "children": [
+                {
+                    "id": 318,
+                    "description": "Write Linear Equation from Ordered Pairs"
+                },
+                {
+                    "id": 319,
+                    "description": "Write Linear Equation from Situation"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.1501811861490548
+        },
+        {
+            "id": 314,
+            "sequence": 12,
+            "description": "Simplifying Expressions positive exponents",
+            "children": [
+                {
+                    "id": 35,
+                    "description": "Exponents"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.6982233869838018
+        },
+        {
+            "id": 315,
+            "sequence": 14,
+            "description": "Solving for a variable",
+            "children": [
+                {
+                    "id": 316,
+                    "description": "Square Root"
+                },
+                {
+                    "id": 317,
+                    "description": "Substitution"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 316,
+            "sequence": 12,
+            "description": "Square Root",
+            "children": [
+                {
+                    "id": 35,
+                    "description": "Exponents"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.24546808321287605
+        },
+        {
+            "id": 317,
+            "sequence": 11,
+            "description": "Substitution",
+            "children": [
+                {
+                    "id": 34,
+                    "description": "Equivalent Fractions"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.7788164325646951
+        },
+        {
+            "id": 318,
+            "sequence": 12,
+            "description": "Write Linear Equation from Ordered Pairs",
+            "children": [
+                {
+                    "id": 319,
+                    "description": "Write Linear Equation from Situation"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.33210216729275965
+        },
+        {
+            "id": 319,
+            "sequence": 11,
+            "description": "Write Linear Equation from Situation",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 40,
+            "sequence": 17,
+            "description": "Bar Graph",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 41,
+            "sequence": 18,
+            "description": "Box and Whisker",
+            "children": [
+                {
+                    "id": 44,
+                    "description": "Median"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.06378348055453587
+        },
+        {
+            "id": 42,
+            "sequence": 17,
+            "description": "Distributive Property",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 43,
+            "sequence": 17,
+            "description": "Histogram as Table or Graph",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 44,
+            "sequence": 17,
+            "description": "Median",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 45,
+            "sequence": 19,
+            "description": "Probability of a Single Event",
+            "children": [
+                {
+                    "id": 417,
+                    "description": "Probability definitions and properties"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.7000450782567477
+        },
+        {
+            "id": 46,
+            "sequence": 21,
+            "description": "Probability of Two Distinct Events",
+            "children": [
+                {
+                    "id": 45,
+                    "description": "Probability of a Single Event"
+                },
+                {
+                    "id": 417,
+                    "description": "Probability definitions and properties"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.24202547234243604
+        },
+        {
+            "id": 47,
+            "sequence": 17,
+            "description": "Tree Diagrams, Lists for Counting",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 48,
+            "sequence": 17,
+            "description": "Venn Diagram",
+            "children": [
+                {
+                    "id": 410,
+                    "description": "Percent Of"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.3990581401379526
+        },
+        {
+            "id": 49,
+            "sequence": 17,
+            "description": "Mean",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 410,
+            "sequence": 17,
+            "description": "Percent Of",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 411,
+            "sequence": 17,
+            "description": "Mode",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 412,
+            "sequence": 18,
+            "description": "Sample Mean",
+            "children": [
+                {
+                    "id": 49,
+                    "description": "Mean"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.9196182992718022
+        },
+        {
+            "id": 413,
+            "sequence": 19,
+            "description": "Sample Standard Deviation",
+            "children": [
+                {
+                    "id": 412,
+                    "description": "Sample Mean"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 414,
+            "sequence": 17,
+            "description": "Probability Distributions",
+            "children": [
+                {
+                    "id": 49,
+                    "description": "Mean"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.7049957376854643
+        },
+        {
+            "id": 415,
+            "sequence": 19,
+            "description": "Hypothesis Testing",
+            "children": [
+                {
+                    "id": 417,
+                    "description": "Probability definitions and properties"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.8545096592738795
+        },
+        {
+            "id": 416,
+            "sequence": 19,
+            "description": "Combinatorics and basic set theory notation",
+            "children": [
+                {
+                    "id": 417,
+                    "description": "Probability definitions and properties"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.28101929368871514
+        },
+        {
+            "id": 417,
+            "sequence": 18,
+            "description": "Probability definitions and properties",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 418,
+            "sequence": 18,
+            "description": "Random variables, expectation, variance",
+            "children": [
+                {
+                    "id": 417,
+                    "description": "Probability definitions and properties"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.6824769139473528
+        },
+        {
+            "id": 419,
+            "sequence": 20,
+            "description": "Confidence Intervals: definitions, duality with hypothesis tests",
+            "children": [
+                {
+                    "id": 415,
+                    "description": "Hypothesis Testing"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 50,
+            "sequence": 27,
+            "description": "Choose an Equation from Given Information",
+            "children": [
+                {
+                    "id": 51,
+                    "description": "Comparing and Identifying Slope/Rate of Change"
+                },
+                {
+                    "id": 55,
+                    "description": "Graph Shape"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 51,
+            "sequence": 24,
+            "description": "Comparing and Identifying Slope/Rate of Change",
+            "children": [
+                {
+                    "id": 53,
+                    "description": "Finding Slope From Equation"
+                },
+                {
+                    "id": 511,
+                    "description": "Unit Rate"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.33662291754268536
+        },
+        {
+            "id": 52,
+            "sequence": 22,
+            "description": "Composition of Function Adding",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 53,
+            "sequence": 22,
+            "description": "Finding Slope From Equation",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 54,
+            "sequence": 24,
+            "description": "Finding y-intercept from Linear Equation",
+            "children": [
+                {
+                    "id": 512,
+                    "description": "X-Y Graph Reading"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.6225259266420454
+        },
+        {
+            "id": 56,
+            "sequence": 24,
+            "description": "Interpreting Coordinate Graphs",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 55,
+            "sequence": 25,
+            "description": "Graph Shape",
+            "children": [
+                {
+                    "id": 56,
+                    "description": "Interpreting Coordinate Graphs"
+                },
+                {
+                    "id": 59,
+                    "description": "Range"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.7958643687600416
+        },
+        {
+            "id": 58,
+            "sequence": 23,
+            "description": "Point Plotting",
+            "children": [
+                {
+                    "id": 56,
+                    "description": "Interpreting Coordinate Graphs"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.11871763461482132
+        },
+        {
+            "id": 57,
+            "sequence": 22,
+            "description": "Inverse Relations",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 1
+        },
+        {
+            "id": 59,
+            "sequence": 22,
+            "description": "Range",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 510,
+            "sequence": 27,
+            "description": "Solving Systems of Linear Equations by Graphing",
+            "children": [
+                {
+                    "id": 54,
+                    "description": "Finding y-intercept from Linear Equation"
+                },
+                {
+                    "id": 55,
+                    "description": "Graph Shape"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.0
+        },
+        {
+            "id": 511,
+            "sequence": 23,
+            "description": "Unit Rate",
+            "children": [
+                {
+                    "id": 53,
+                    "description": "Finding Slope From Equation"
+                }
+            ],
+            "dimensions": [
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.88
+            ],
+            "known": 0.688156891865698
+        },
+        {
+            "id": 512,
+            "sequence": 22,
+            "description": "X-Y Graph Reading",
+            "children": [],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 1,
+            "probability_true": [
+                1
+            ],
+            "probability_false": [
+                0
+            ],
+            "known": 0
+        },
+        {
+            "id": 513,
+            "sequence": 26,
+            "description": "Write Linear Equation from Graph",
+            "children": [
+                {
+                    "id": 55,
+                    "description": "Graph Shape"
+                },
+                {
+                    "id": 512,
+                    "description": "X-Y Graph Reading"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.16767801727148146
+        },
+        {
+            "id": 514,
+            "sequence": 26,
+            "description": "Midpoints",
+            "children": [
+                {
+                    "id": 58,
+                    "description": "Point Plotting"
+                },
+                {
+                    "id": 512,
+                    "description": "X-Y Graph Reading"
+                }
+            ],
+            "dimensions": [
+                2,
+                2
+            ],
+            "terminal": 0,
+            "probability_true": [
+                0.98,
+                0.98,
+                0.12,
+                0.12
+            ],
+            "probability_false": [
+                0.02,
+                0.02,
+                0.88,
+                0.88
+            ],
+            "known": 0.48899697473372084
+        }
+    ]
+}
