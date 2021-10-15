@@ -9,9 +9,12 @@ from keras.models import Sequential
 from keras.layers import Dense
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-
+import json
+import csv
 class NeuralNetwork:
-    def __init__(self):
+    def __init__(self, id):
+        self.student_id = id
+        self.concepts = []
         # load the dataset
         dataset = dataset = pd.read_csv('TestData/studentTestData.csv', delimiter=',')
         # To remove the scientific notation from numpy arrays
@@ -82,5 +85,47 @@ class NeuralNetwork:
         #invert normalize
         ynew = self.TargetVarScaler.inverse_transform(ynew) 
         Xnew = self.PredictorScalerFit.inverse_transform(Xnew)
-        print("X=%s, Predicted=%s" % (Xnew[0], ynew[0][0]))
+
         return ynew[0][0]
+
+    def getConcept(self):
+        available_concepts = self.getNextConcepts()
+        next_concept = available_concepts[0]
+        next_concept['score'] = 0
+        for c in available_concepts:
+            score = self.getConceptValue(c['id'])
+           
+            if score > next_concept['score']:
+                next_concept = c
+                next_concept['score'] = score
+                next_concept['known'] = score
+
+    
+        return next_concept
+
+
+    def getNextConcepts(self):
+        f = open('StudentKnowledge/KnowledgeMapLearnt' + str(self.student_id) + '.json',)
+        self.data = json.load(f)
+  
+        for i in self.data['concepts']:
+            if i['learnt'] == 0:
+                self.concepts.append(i)
+
+        return self.concepts
+
+    def getConceptValue(self, concept_id):
+        with open('TestData/student' + str(self.student_id)) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            for row in csv_reader:
+                if str(row[3]) == str(concept_id):
+                    row.pop(len(row) - 1)
+                    level = self.predict(row)
+                    return level
+
+    def levelConceptsNotLearnt(self, level):
+        for i in self.data['concepts']:
+            if i['sequence'] == level and i['learnt'] == 0:
+                return True
+
+        return False

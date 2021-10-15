@@ -29,7 +29,8 @@ class StudentSimulator:
             self.data = json.load(f)
             self.knowledge = copy.deepcopy(self.data)
             self.knowledge = self.prepareStudentKnowledge()
-            
+            self.knowledgeInternal = copy.deepcopy(self.data)
+
             for i in self.knowledge['concepts']: # set all the terminal nodes
                 if i['terminal'] == 1: #no dependancies
                     i['known'] = self.generateKnown()
@@ -38,10 +39,17 @@ class StudentSimulator:
                 if i['terminal'] == 0:
                     known = self.percentageChildrenKnown(i['children'])
                     i['known'] = self.generateKnownPercentage(known)
-        
+                i['learnt'] = 0
+                
+            for i in self.knowledgeInternal['concepts']: 
+                i['known'] = 0
+                i['learnt'] = 0
 
             with open('StudentKnowledge/KnowledgeMap' + str(sid) + '.json', 'w') as outfile:
                 json.dump(self.knowledge, outfile)
+
+            with open('StudentKnowledge/KnowledgeMapLearnt' + str(sid) + '.json', 'w') as outfile:
+                json.dump(self.knowledgeInternal, outfile)
             
             self.studentKnowledge.append(self.knowledge)
 
@@ -132,3 +140,6 @@ class StudentSimulator:
             score = random.randint(0, (27 - sequence)) + random.randint(0, 23)
 
         return score
+
+
+    
