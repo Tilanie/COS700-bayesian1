@@ -1,14 +1,30 @@
 from TeachingHistory import ConceptHistory, TestHistory, UnitHistory
 from SkillPredictor import SkillPredictor
+import json
 
 class StudentCharacteristics:
     def __init__(self, name, id, username, password, email, language, city, country):
         self.personalData = self.PersonalData(name, id, username, password, email, language, city, country)
-        self.user_record = [11, 'Female', 24, 1 ,0, 0.50]
+        self.user_record = []
+  
         self.performanceData = self.PerformanceData(self.user_record)
         self.teachingHistory = self.TeachingHistory()
 
         
+    def getPersonalData(self, id, concept):
+        f = open('knowledgeMap' + str(id) + '.json',)
+        self.data = json.load(f)
+        
+        for i in self.data['concepts']:
+            if i['id'] == concept['id']:
+                gender = i['gender']
+                age = i['age']
+                degree_careful = i['degreeCarefull']
+                class_id = i['classID'] 
+                proficiency = i['proficiency']
+                
+        
+            
         
     class PersonalData:
         def __init__(self, name, id, username, password, email, language, city, country):
@@ -30,14 +46,8 @@ class StudentCharacteristics:
             self.session_number = 0
             self.learning_style = ''
             self.init_skill_level = 0
-            self.SkillPredictor = SkillPredictor(self.user_record)
-
-            self.predictSkill()
-            
-
-        def predictSkill(self):
-            self.init_skill = self.SkillPredictor.predictSkill()
-
+           
+        
             
         
     class TeachingHistory:

@@ -11,8 +11,8 @@ from sklearn.metrics import confusion_matrix,accuracy_score
 
 
 class KNearestNeighbour:
-    def __init__(self, user_record):
-        self.user_record = user_record
+    def __init__(self):
+        
         self.classifier = self.StereotypeInitializor()  
         self.skill = 0
 
@@ -29,10 +29,6 @@ class KNearestNeighbour:
    
         X[:,1] = self.le.fit_transform(X[:,1])
    
-        
-        predict_X = self.user_record
-
-        predict_X[1] = self.le.fit_transform([predict_X[1]])[0]
       
         
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
@@ -44,20 +40,16 @@ class KNearestNeighbour:
         X_train = self.sc.fit_transform(X_train)
 
         
-        predict_X = self.sc.transform([predict_X])[0]
         X_test = self.sc.transform(X_test)
             
         self.classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
         self.classifier.fit(X_train, y_train)
 
-        
-        y_pred = self.classifier.predict([predict_X])
-
         return self.classifier
              
             
-    def predict(self, data):
-        predict_X = self.user_record
+    def predict(self, user_record, data):
+        predict_X = user_record
         predict_X[0] = data
 
         predict_X[1] = self.le.fit_transform([predict_X[1]])[0]

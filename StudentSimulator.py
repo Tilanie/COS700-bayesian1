@@ -2,7 +2,7 @@ import json
 import copy
 import random
 import csv
-
+import pandas as pd
 class StudentSimulator:
     def __init__(self, seed = 1):
         self.knowledge = None   
@@ -25,25 +25,49 @@ class StudentSimulator:
 
     def generateStudentKnowledge(self):
         for sid in self.studentIds:
+            
             f = open('BayesianData.json',)
             self.data = json.load(f)
             self.knowledge = copy.deepcopy(self.data)
             self.knowledge = self.prepareStudentKnowledge()
             self.knowledgeInternal = copy.deepcopy(self.data)
-
+            self.proficiencies = []
+            self.dc = []
+            gender = self.generateGender()
             for i in self.knowledge['concepts']: # set all the terminal nodes
+                proficiency = self.getTestValuesAverageConcept(sid, i['id'])
+                self.proficiencies.append(proficiency)
+                degree_careful = self.generateDegreeCarefullness()
+                i['degreeCarefull'] = degree_careful
+                self.dc.append(degree_careful)
+                i['proficiency'] = proficiency
+                i['gender'] = gender
+                # Concept ID	Gender	Age	SchoolClass	DegreeCarefulness	Proficiency
                 if i['terminal'] == 1: #no dependancies
                     i['known'] = self.generateKnown()
                 
+            age = self.generateAge()
+            clasId = self.generateCLassID(age)
             for i in self.knowledge['concepts']:
                 if i['terminal'] == 0:
                     known = self.percentageChildrenKnown(i['children'])
                     i['known'] = self.generateKnownPercentage(known)
                 i['learnt'] = 0
+                i['age'] = age
+                i['classID'] = clasId
                 
+            count = 0
             for i in self.knowledgeInternal['concepts']: 
+                gender = self.generateGender()
+                i['proficiency'] = self.proficiencies[count]
+                i['degreeCarefull'] = self.dc[count]
+                i['gender'] = gender
                 i['known'] = 0
                 i['learnt'] = 0
+                i['age'] = age
+                i['classID'] = clasId
+                count = count + 1
+                
 
             with open('StudentKnowledge/KnowledgeMap' + str(sid) + '.json', 'w') as outfile:
                 json.dump(self.knowledge, outfile)
@@ -52,6 +76,158 @@ class StudentSimulator:
                 json.dump(self.knowledgeInternal, outfile)
             
             self.studentKnowledge.append(self.knowledge)
+            
+    def getTestValuesAverageConcept(self, id, concept):
+        self.dataset = pd.read_csv('TestData/student' + str(id), delimiter=',', header=None)
+   
+        for row in self.dataset.values:
+           
+            if int(row[3]) == int(concept):
+                average = (row[0] + row[1] + row[2]) / 3
+                
+        return average
+        
+    def generateCLassID(self, age):
+        self.seed = self.seed + 1
+        random.seed(self.seed)
+        
+        if age > 17:
+            choice = random.randint(0, 100)
+            if choice > 85:
+                id = 5
+            else:
+                id = 6
+        elif age == 17:
+            choice = random.randint(0, 100)
+            if choice > 85:
+                id = 6
+            elif choice > 15:
+                id = 5
+            else:
+                id = 4
+        elif age == 16:
+            choice = random.randint(0, 100)
+            if choice > 85:
+                id = 5
+            elif choice > 15:
+                id = 4
+            else:
+                id = 3
+        elif age == 15:
+            choice = random.randint(0, 100)
+            if choice > 85:
+                id = 4
+            elif choice > 15:
+                id = 3
+            else:
+                id = 2
+        elif age == 14:
+            choice = random.randint(0, 100)
+            if choice > 85:
+                id = 3
+            elif choice > 15:
+                id = 2
+            else:
+                id = 1
+        else:
+            choice = random.randint(0, 100)
+            if choice > 85:
+                id = 2
+            else:
+                id = 1
+        return id
+           
+            
+    def generateAge(self):
+        age_choice = 0
+        for i in self.knowledge['concepts']:
+            if i['proficiency'] > 0.75:
+                if int(str(i['id'])[:1]) >= 4:
+                    age_choice = age_choice + 4
+                elif int(str(i['id'])[:1]) >= 3:
+                    age_choice = age_choice + 3
+                elif int(str(i['id'])[:1]) >= 2:
+                    age_choice = age_choice + 2
+                elif int(str(i['id'])[:1]) >= 1:
+                    age_choice = age_choice + 1
+            elif i['proficiency'] > 0.5:
+                if int(str(i['id'])[:1]) >= 4:
+                    age_choice = age_choice + 2
+                elif int(str(i['id'])[:1]) >= 3:
+                    age_choice = age_choice + 1
+                elif int(str(i['id'])[:1]) >= 2:
+                    age_choice = age_choice + 0
+                elif int(str(i['id'])[:1]) >= 1:
+                    age_choice = age_choice - 1
+            elif i['proficiency'] > 0.25:
+                if int(str(i['id'])[:1]) >= 4:
+                    age_choice = age_choice + 0
+                elif int(str(i['id'])[:1]) >= 3:
+                    age_choice = age_choice - 1
+                elif int(str(i['id'])[:1]) >= 2:
+                    age_choice = age_choice -2
+                elif int(str(i['id'])[:1]) >= 1:
+                    age_choice = age_choice - 3
+            else:
+                if int(str(i['id'])[:1]) >= 4:
+                    age_choice = age_choice -1
+                elif int(str(i['id'])[:1]) >= 3:
+                    age_choice = age_choice -2
+                elif int(str(i['id'])[:1]) >= 2:
+                    age_choice = age_choice  -3
+                elif int(str(i['id'])[:1]) >= 1:
+                    age_choice = age_choice - 4
+            
+        age_choice = age_choice + 428 # normalize
+        
+        self.seed = self.seed + 1
+        random.seed(self.seed)
+        if age_choice <= 214:
+            age = random.randint(0,5)
+            if age > 3:
+                age = 13
+            elif age > 2:
+                age = 14
+       
+        elif age_choice <= 428:
+            age = random.randint(14, 15)
+  
+        elif age_choice <= 642:
+            age = random.randint(15, 16)
+  
+        else:
+            age = random.randint(0,6)
+            if age > 5:
+                age = 19
+            elif age > 2:
+                age = 18
+            else:
+                age= 17
+                
+        return age
+        
+    
+    def generateGender(self):
+        self.seed = self.seed + 1
+        random.seed(self.seed)
+        choice = random.randint(0,1)
+        if choice == 0:
+            return 'Male'
+        else:
+            return 'Female'
+        
+    
+
+
+    
+    def generateDegreeCarefullness(self):
+        self.seed = self.seed + 1
+        random.seed(self.seed)
+        return random.randint(0,1)
+    
+
+    
+
 
     def percentageChildrenKnown(self, children):
         num_children = len(children)

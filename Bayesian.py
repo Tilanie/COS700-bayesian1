@@ -6,15 +6,18 @@ import json
 from pgmpy.models import BayesianModel
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.inference import VariableElimination
+from SkillPredictor import SkillPredictor
 
 class Bayesian:
     def __init__(self, id):
+        self.skillPredictor = SkillPredictor(id)
+        self.skillPredictor.predictSkill()
         self.student_id = id
         self.network = []
         self.cpd_list = []
         self.concepts = []
         self.bayesNet = BayesianModel()
-        f = open('BayesianDataOut.json',)
+        f = open('StudentKnowledge/knowledgeMapLearnt' + str(id) + '.json',)
         self.data = json.load(f)
         
         for i in self.data['concepts']:
@@ -104,6 +107,8 @@ class Bayesian:
                 return True
 
         return False
+    
+    
 
 
 
