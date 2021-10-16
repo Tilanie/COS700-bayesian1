@@ -90,13 +90,14 @@ class Bayesian:
 
     def getNextConcepts(self):
         f = open('StudentKnowledge/KnowledgeMapLearnt' + str(self.student_id) + '.json',)
-        self.data = json.load(f)
-  
-        for i in self.data['concepts']:
-            if i['learnt'] == 0:
-                self.concepts.append(i)
 
-        return self.concepts
+        data = json.load(f)
+        concepts = []
+        for i in data['concepts']:
+            if i['learnt'] == 0:
+                concepts.append(i)
+
+        return concepts
 
     def findAvailableLevel(self):
         pass

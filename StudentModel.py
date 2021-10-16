@@ -26,18 +26,38 @@ class StudentModel:
     def learnConcept(self, concept):
      
         sid = self.id
-        f = open('StudentKnowledge/KnowledgeMap' + str(sid) + '.json',)
+        f = open('StudentKnowledge/KnowledgeMapLearnt' + str(sid) + '.json',)
         self.knowledge = json.load(f)
       
             
         for i in self.knowledge['concepts']: 
       
             if str(i['id']) == str(concept['id']):
+                
                 increase = self.levelOfIncrease(i['known'])
-                i['known'] = concept['known'] + increase
+                i['known'] = i['known'] + increase
                 i['learnt'] = i['learnt'] + 1
+               
 
         with open('StudentKnowledge/KnowledgeMapLearnt' + str(sid) + '.json', 'w') as outfile:
+            json.dump(self.knowledge, outfile)
+            
+        
+        f = open('StudentKnowledge/KnowledgeMap' + str(sid) + '.json',)
+        self.knowledge = json.load(f)
+      
+            
+        for i in self.knowledge['concepts']: 
+            
+            if str(i['id']) == str(concept['id']):
+                
+                increase = self.levelOfIncrease(i['known'])
+                i['known'] = i['known'] + increase
+                i['learnt'] = i['learnt'] + 1
+              
+                
+
+        with open('StudentKnowledge/KnowledgeMap' + str(sid) + '.json', 'w') as outfile:
             json.dump(self.knowledge, outfile)
     
             
