@@ -64,6 +64,6 @@ class StudentModel:
     def levelOfIncrease(self, currentKnowledge):
         self.seed = self.seed + 1
         random.seed(self.seed)
-        range = 1 - currentKnowledge
-        number = random.uniform(range/2, range)
+        range_ = 1 - currentKnowledge
+        number = random.uniform(range_/2.3, range_)
         return number

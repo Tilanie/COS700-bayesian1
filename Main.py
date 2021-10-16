@@ -2,7 +2,7 @@ from StudentModel import StudentModel
 from StudentSimulator import StudentSimulator
 from NeuralNetwork import NeuralNetwork
 
-seed = 1
+seed = 2
 studentModel = StudentModel("Tilanie", 1001, "tbresler", "pass", "t@gmail.com", "English", "Pretoria", "SA", seed)
 studentSimulator = StudentSimulator()
 studentSimulator.generateStudentData()
