@@ -3,12 +3,13 @@ from StudentSimulator import StudentSimulator
 from NeuralNetwork import NeuralNetwork
 
 seed = 2
-studentModel = StudentModel("Tilanie", 1001, "tbresler", "pass", "t@gmail.com", "English", "Pretoria", "SA", seed)
+method = 2
+
 studentSimulator = StudentSimulator()
 studentSimulator.generateStudentData()
+studentModel = StudentModel("Tilanie", 1001, "tbresler", "pass", "t@gmail.com", "English", "Pretoria", "SA", seed, method)
+wait = input("first learning")
 studentModel.learn()
-# vals = studentModel.predictStudentKnowledge('Midpoints')
-# print("Student Model")
-# print(vals)
-# neuralNetwork = NeuralNetwork()
-# neuralNetwork.predict([0.87,0.68,0.83,122,1])
+wait = input("second learning")
+studentModel.learn()
+

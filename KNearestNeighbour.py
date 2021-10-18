@@ -49,6 +49,8 @@ class KNearestNeighbour:
              
             
     def predict(self, user_record, data):
+       
+
         predict_X = user_record
         predict_X[0] = data
 
@@ -57,5 +59,6 @@ class KNearestNeighbour:
         predict_X = self.sc.transform([predict_X])[0]
         
         y_pred = self.classifier.predict([predict_X])
-
+        
+      
         return y_pred[0]

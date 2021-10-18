@@ -94,7 +94,7 @@ class NeuralNetwork:
         next_concept['score'] = 0
         for c in available_concepts:
             score = self.getConceptValue(c['id'])
-           
+        
             if score > next_concept['score']:
                 next_concept = c
                 next_concept['score'] = score
@@ -109,16 +109,19 @@ class NeuralNetwork:
         self.data = json.load(f)
   
         for i in self.data['concepts']:
-            if i['learnt'] == 0:
+            if i['learnt'] == 0 and i['known'] != 1:
                 self.concepts.append(i)
 
+    
         return self.concepts
 
     def getConceptValue(self, concept_id):
+       
         with open('TestData/student' + str(self.student_id)) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for row in csv_reader:
-                if str(row[3]) == str(concept_id):
+              
+                if int(float(row[3])) == int(concept_id):
                     row.pop(len(row) - 1)
                     level = self.predict(row)
                     return level

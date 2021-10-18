@@ -10,8 +10,11 @@ from SkillPredictor import SkillPredictor
 
 class Bayesian:
     def __init__(self, id):
+ 
+
         self.skillPredictor = SkillPredictor(id)
         self.skillPredictor.predictSkill()
+
         self.student_id = id
         self.network = []
         self.cpd_list = []
@@ -48,7 +51,52 @@ class Bayesian:
        
         
         for k in self.cpd_list:
-            # print(k)
+            
+            self.bayesNet.add_cpds(k)
+            
+            
+        self.bayesNet.check_model()
+        self.solver = VariableElimination(self.bayesNet)
+      
+        f.close()
+
+    def updateNetwork(self):
+        self.network = []
+        self.cpd_list = []
+        self.concepts = []
+        self.bayesNet = BayesianModel()
+        f = open('StudentKnowledge/knowledgeMapLearnt' + str(self.student_id) + '.json',)
+        self.data = json.load(f)
+        
+        for i in self.data['concepts']:
+            # concept = Concept()
+            children = []
+            self.network.append(i)
+            self.bayesNet.add_node(i["description"])
+            for j in i["children"]:
+                self.bayesNet.add_edge(j["description"], i["description"])
+                children.append(j["description"])
+        
+            c = len(i["children"])
+            d = len(i["dimensions"])
+            
+            c = 2
+            if i["terminal"] == 0:
+                v = [i["probability_true"], i["probability_false"]]
+
+               
+                cpd_val = TabularCPD(i["description"], c, values=v,
+                   evidence=children, evidence_card=i["dimensions"])
+                self.cpd_list.append(cpd_val)
+            else:
+                v = [i["probability_true"], i["probability_false"]]
+                cpd_val = TabularCPD(variable=i["description"], variable_card=c, values=v)  
+       
+                self.cpd_list.append(cpd_val)
+       
+        
+        for k in self.cpd_list:
+     
             self.bayesNet.add_cpds(k)
             
             
@@ -63,6 +111,7 @@ class Bayesian:
         return result.values
 
     def getConcept(self):
+        self.updateNetwork()
         self.concepts = self.getNextConcepts()
         concept_values = []
         for c in self.concepts:
@@ -90,11 +139,10 @@ class Bayesian:
 
     def getNextConcepts(self):
         f = open('StudentKnowledge/KnowledgeMapLearnt' + str(self.student_id) + '.json',)
-
         data = json.load(f)
         concepts = []
         for i in data['concepts']:
-            if i['learnt'] == 0:
+            if i['learnt'] == 0 and i['known'] != 1:
                 concepts.append(i)
 
         return concepts

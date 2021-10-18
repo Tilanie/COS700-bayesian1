@@ -3,6 +3,9 @@ import copy
 import random
 import csv
 import pandas as pd
+import os.path
+from SkillPredictor import SkillPredictor
+
 class StudentSimulator:
     def __init__(self, seed = 1):
         self.knowledge = None   
@@ -26,7 +29,14 @@ class StudentSimulator:
     def generateStudentKnowledge(self):
         for sid in self.studentIds:
             
-            f = open('BayesianData.json',)
+
+            file_exists = os.path.exists('StudentKnowledge/KnowledgeMapLearnt' + str(sid) + '.json')
+
+            if file_exists == True:
+                f = open('StudentKnowledge/KnowledgeMapLearnt' + str(sid) + '.json',)
+            else:
+                f = open('BayesianData.json',)
+            
             self.data = json.load(f)
             self.knowledge = copy.deepcopy(self.data)
             self.knowledge = self.prepareStudentKnowledge()
@@ -43,15 +53,19 @@ class StudentSimulator:
                 i['proficiency'] = proficiency
                 i['gender'] = gender
                 # Concept ID	Gender	Age	SchoolClass	DegreeCarefulness	Proficiency
-                if i['terminal'] == 1: #no dependancies
-                    i['known'] = self.generateKnown()
+                # if i['terminal'] == 1: #no dependancies
+                #     i['known'] = self.generateKnown()
+                known = self.getTestValuesAverageConcept(sid, i['id'])
+                i['known'] = known
                 
+          
             age = self.generateAge()
             clasId = self.generateCLassID(age)
             for i in self.knowledge['concepts']:
-                if i['terminal'] == 0:
-                    known = self.percentageChildrenKnown(i['children'])
-                    i['known'] = self.generateKnownPercentage(known)
+                known = self.getTestValuesAverageConcept(sid, i['id'])
+               
+                i['known'] = known
+                    
                 i['learnt'] = 0
                 i['age'] = age
                 i['classID'] = clasId
@@ -62,7 +76,9 @@ class StudentSimulator:
                 i['proficiency'] = self.proficiencies[count]
                 i['degreeCarefull'] = self.dc[count]
                 i['gender'] = gender
-                i['known'] = 0
+                known = self.getTestValuesAverageConcept(sid, i['id'])
+            
+                i['known'] = known
                 i['learnt'] = 0
                 i['age'] = age
                 i['classID'] = clasId
@@ -75,7 +91,7 @@ class StudentSimulator:
             with open('StudentKnowledge/KnowledgeMapLearnt' + str(sid) + '.json', 'w') as outfile:
                 json.dump(self.knowledgeInternal, outfile)
             
-            self.studentKnowledge.append(self.knowledge)
+            self.studentKnowledge.append(self.knowledgeInternal)
             
     def getTestValuesAverageConcept(self, id, concept):
         self.dataset = pd.read_csv('TestData/student' + str(id), delimiter=',', header=None)
@@ -83,7 +99,7 @@ class StudentSimulator:
         for row in self.dataset.values:
            
             if int(row[3]) == int(concept):
-                average = (row[0] + row[1] + row[2]) / 3
+                average = (row[0] + row[1] + row[2] + row[5]) / 4
                 
         return average
         
@@ -182,11 +198,12 @@ class StudentSimulator:
         
         self.seed = self.seed + 1
         random.seed(self.seed)
+   
         if age_choice <= 214:
             age = random.randint(0,5)
             if age > 3:
                 age = 13
-            elif age > 2:
+            else:
                 age = 14
        
         elif age_choice <= 428:
