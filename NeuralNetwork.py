@@ -94,7 +94,9 @@ class NeuralNetwork:
         next_concept['score'] = 0
         for c in available_concepts:
             score = self.getConceptValue(c['id'])
-        
+            print("c['id']")
+            print(c['id'])
+            print("score: " + str(score))
             if score > next_concept['score']:
                 next_concept = c
                 next_concept['score'] = score
@@ -107,9 +109,9 @@ class NeuralNetwork:
     def getNextConcepts(self):
         f = open('StudentKnowledge/KnowledgeMapLearnt' + str(self.student_id) + '.json',)
         self.data = json.load(f)
-  
+        self.concepts = []
         for i in self.data['concepts']:
-            if i['learnt'] == 0 and i['known'] != 1:
+            if i['learnt'] == 0 and i['known'] < 1:
                 self.concepts.append(i)
 
     

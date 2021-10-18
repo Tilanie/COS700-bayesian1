@@ -56,12 +56,13 @@ class StandardPredictor:
         f = open('StudentKnowledge/KnowledgeMapLearnt' + str(self.student_id) + '.json',)
         self.data = json.load(f)
         self.level = self.findAvailableLevel()
+        self.concepts = []
         for i in self.data['concepts']:
             if self.level < 27:
-                if i['sequence'] == self.level + 1 and i['learnt'] == 0 and i['known'] != 1:
+                if i['sequence'] == self.level + 1 and i['learnt'] == 0 and i['known'] < 1:
                     self.concepts.append(i)
             else:
-                if i['sequence'] == self.level and i['learnt'] == 0 and i['known'] != 1:
+                if i['sequence'] == self.level and i['learnt'] == 0 and i['known'] < 1:
                     self.concepts.append(i)
 
         return self.concepts
