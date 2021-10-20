@@ -5,15 +5,19 @@ import csv
 import pandas as pd
 import os.path
 from SkillPredictor import SkillPredictor
+from Fuzzy import Fuzzy
 
 class StudentSimulator:
-    def __init__(self, seed = 1):
+    def __init__(self, seed = 1, fuzzy = False):
         self.knowledge = None   
         self.seed = seed
+        self.fuzzy_used = fuzzy
         random.seed(self.seed)
         # self.studentIds = ['1000', '1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010', '1011', '1012', '1013', '1014', '1015', '1016']
         self.studentIds = ['9000', '9001']
         self.studentKnowledge = []
+        if fuzzy == True:
+            self.fuzzy = Fuzzy()
         
 
     def createTestData(self):
@@ -44,6 +48,7 @@ class StudentSimulator:
             self.proficiencies = []
             self.dc = []
             gender = self.generateGender()
+      
             for i in self.knowledge['concepts']: # set all the terminal nodes
                 proficiency = self.getTestValuesAverageConcept(sid, i['id'])
                 self.proficiencies.append(proficiency)
@@ -101,6 +106,12 @@ class StudentSimulator:
             if int(row[3]) == int(concept):
                 average = (row[0] + row[1] + row[2] + row[5]) / 4
                 
+      
+        if self.fuzzy_used == True:
+            average = average * 2.0
+           
+            average = self.fuzzy.predict(average) + 0.15
+         
         return average
         
     def generateCLassID(self, age):

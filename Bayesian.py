@@ -9,12 +9,15 @@ from pgmpy.inference import VariableElimination
 from SkillPredictor import SkillPredictor
 
 class Bayesian:
-    def __init__(self, id):
+    def __init__(self, id, stereotype = False):
  
 
         self.skillPredictor = SkillPredictor(id)
-        self.skillPredictor.predictSkill()
-
+        if stereotype == True:
+            self.skillPredictor.predictSkill()
+        else:
+            self.skillPredictor.predictSkillStandard()
+    
         self.student_id = id
         self.network = []
         self.cpd_list = []
@@ -38,8 +41,7 @@ class Bayesian:
             c = 2
             if i["terminal"] == 0:
                 v = [i["probability_true"], i["probability_false"]]
-
-               
+           
                 cpd_val = TabularCPD(i["description"], c, values=v,
                    evidence=children, evidence_card=i["dimensions"])
                 self.cpd_list.append(cpd_val)

@@ -4,19 +4,22 @@ from BugLibrary import BugLibrary
 from Bayesian import Bayesian
 from FuzzyKnowledgePredictor import FuzzyKnowledgePredictor
 import json
-
+from Fuzzy import Fuzzy
 class StudentKnowledge:
-    def __init__(self, id, method = 0):
+    def __init__(self, id, method = 0, stereotype = False, fuzzy = False):
         self.student_id = id
     
         self.level = 0
         self.data = None
         self.concepts = []
+        self.fuzzy_used = fuzzy
+        if self.fuzzy_used == True:
+            self.fuzzy = Fuzzy()
         if method == 0: 
-            self.predictor = Bayesian(self.student_id)
+            self.predictor = Bayesian(self.student_id, stereotype)
   
         elif method == 1: 
-            self.predictor = NeuralNetwork(self.student_id)
+            self.predictor = NeuralNetwork(self.student_id, self.fuzzy_used)
       
         else:
             self.predictor = StandardPredictor(self.student_id)
@@ -57,14 +60,29 @@ class StandardPredictor:
         self.data = json.load(f)
         self.level = self.findAvailableLevel()
         self.concepts = []
-        for i in self.data['concepts']:
-            if self.level < 27:
-                if i['sequence'] == self.level + 1 and i['learnt'] == 0 and i['known'] < 1:
-                    self.concepts.append(i)
+        use_level = self.level
+        num_tries = 0
+        decreasing = False
+        while len(self.concepts) == 0:
+            for i in self.data['concepts']:
+                if use_level < 27:
+                    if i['sequence'] == use_level + 1 and i['learnt'] == 0 and i['known'] < 1:
+                        self.concepts.append(i)
+                else:
+                    if i['sequence'] == use_level and i['learnt'] == 0 and i['known'] < 1:
+                        self.concepts.append(i)
+            if use_level == 0:
+                use_level = use_level + 1
             else:
-                if i['sequence'] == self.level and i['learnt'] == 0 and i['known'] < 1:
-                    self.concepts.append(i)
+                if decreasing == True:
+                    use_level = use_level - 1
+                else:
+                    use_level = use_level + 1
+            num_tries = num_tries + 1
 
+            if num_tries > 26:
+                num_tries = 0
+                decreasing = not decreasing
         return self.concepts
 
     def findAvailableLevel(self):

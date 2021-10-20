@@ -9,12 +9,16 @@ from keras.models import Sequential
 from keras.layers import Dense
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from Fuzzy import Fuzzy
 import json
 import csv
 class NeuralNetwork:
-    def __init__(self, id):
+    def __init__(self, id, fuzzy = False):
         self.student_id = id
         self.concepts = []
+        self.fuzzy_used = fuzzy
+        if self.fuzzy_used == True:
+            self.fuzzy = Fuzzy()
         # load the dataset
         dataset = dataset = pd.read_csv('TestData/studentTestData.csv', delimiter=',')
         # To remove the scientific notation from numpy arrays
@@ -85,8 +89,10 @@ class NeuralNetwork:
         #invert normalize
         ynew = self.TargetVarScaler.inverse_transform(ynew) 
         Xnew = self.PredictorScalerFit.inverse_transform(Xnew)
-
-        return ynew[0][0]
+        score = ynew[0][0]
+        if self.fuzzy_used == True:
+            score = self.fuzzy.predict(ynew[0][0])
+        return score
 
     def getConcept(self):
         available_concepts = self.getNextConcepts()
@@ -94,9 +100,7 @@ class NeuralNetwork:
         next_concept['score'] = 0
         for c in available_concepts:
             score = self.getConceptValue(c['id'])
-            print("c['id']")
-            print(c['id'])
-            print("score: " + str(score))
+        
             if score > next_concept['score']:
                 next_concept = c
                 next_concept['score'] = score
@@ -107,6 +111,7 @@ class NeuralNetwork:
 
 
     def getNextConcepts(self):
+
         f = open('StudentKnowledge/KnowledgeMapLearnt' + str(self.student_id) + '.json',)
         self.data = json.load(f)
         self.concepts = []

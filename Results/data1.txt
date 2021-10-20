@@ -1,0 +1,420 @@
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.34300532711238
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731716
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.889456936600126
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 5.87601211511371
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.788411600383135
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1001
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.531562822231198
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1001
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731716
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1001
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.577742170163894
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1001
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 5.856243303813827
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1001
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.219964322802689
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1002
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.2955343682199505
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1002
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731716
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1002
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.375121612550025
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1002
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 6.006032890848182
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1002
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.022259480052938
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1003
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.337830513675119
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1003
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731716
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1003
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.507699565909377
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1003
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 6.225639776012642
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1003
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.610444194327847
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1004
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.070059080599773
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1004
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731716
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1004
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.2784555960882
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1004
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 5.64234208614036
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1004
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.814989936042807
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1005
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 4.76138407782409
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1005
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731723
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1005
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.891478422284827
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1005
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 6.245065158578477
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1005
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.82064082706124
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1006
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 4.183906177043461
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1006
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731723
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1006
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.329811351245674
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1006
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 6.070442680797974
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1006
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.67406039032749
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1007
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 4.79054288503233
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1007
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731723
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1007
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.091582594496039
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1007
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 6.109273092209307
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1007
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.505912507731217
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1008
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.275440962349329
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1008
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731744
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1008
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.813230318076876
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1008
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 6.36706914990306
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1008
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.10386474142728
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1009
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.2703780367471715
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1009
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731737
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1009
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.0707274182056565
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1009
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 5.759274892676132
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1009
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.542206352233073
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1010
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 4.7417146546354125
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1010
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731716
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1010
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.838947056661546
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1010
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 5.910284619812707
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1010
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.724642773299067
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1011
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.188262911432037
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1011
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.182517878731737
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1011
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.99732870439324
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1011
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 5.689020205299116
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1011
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.959669607098142
+
