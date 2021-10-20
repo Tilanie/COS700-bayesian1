@@ -22,18 +22,19 @@ class SkillPredictor:
         
         for i in range(0, len(data['concepts'])):
             if data['concepts'][i]["terminal"] == 1:
-                known = data['concepts'][i]['known'] * 2
+                known = data['concepts'][i]['known'] * 1.75
             
                 data['concepts'][i]['probability_true'] = copy.deepcopy([known])
                 data['concepts'][i]['known'] = known
                 false = round((1 - known), 2)
                 data['concepts'][i]['probability_false'] = [false]
             else: #not terminal, knowledge needs to be updates
-                level = self.knn.predict(self.getUserData(data['concepts'][i]["id"]), data['concepts'][i]["id"])
-                # print(self.getUserData(data['concepts'][i]["id"]))
-                # print(data['concepts'][i]["id"])
-                # print(level)
-                known = self.encodeSkillLevel(level)
+                # level = self.knn.predict(self.getUserData(data['concepts'][i]["id"]), data['concepts'][i]["id"])
+                # # print(self.getUserData(data['concepts'][i]["id"]))
+                # # print(data['concepts'][i]["id"])
+                # # print(level)
+                # known = self.encodeSkillLevel(level)
+                known = data['concepts'][i]['known'] * 1.75
                 # print(known)
                 data['concepts'][i]['known'] = copy.deepcopy(known)
     
@@ -53,7 +54,7 @@ class SkillPredictor:
             if data['concepts'][i]["terminal"] == 1:
                 level = self.knn.predict(self.getUserData(data['concepts'][i]["id"]), data['concepts'][i]["id"])
               
-                known = self.encodeSkillLevel(level)
+                known = self.encodeSkillLevel(level) * 1.2
             
                 data['concepts'][i]['probability_true'] = copy.deepcopy([known])
                 data['concepts'][i]['known'] = known
@@ -64,7 +65,7 @@ class SkillPredictor:
                 # print(self.getUserData(data['concepts'][i]["id"]))
                 # print(data['concepts'][i]["id"])
                 # print(level)
-                known = self.encodeSkillLevel(level)
+                known = self.encodeSkillLevel(level) * 1.2
                 # print(known)
                 data['concepts'][i]['known'] = copy.deepcopy(known)
     

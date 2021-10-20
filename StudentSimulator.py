@@ -110,7 +110,7 @@ class StudentSimulator:
         if self.fuzzy_used == True:
             average = average * 2.0
            
-            average = self.fuzzy.predict(average) + 0.15
+            average = self.fuzzy.predict(average) + 0.30
          
         return average
         

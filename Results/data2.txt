@@ -1,0 +1,91 @@
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.454731312819035
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 7.653759309775602
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Neural Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.527091558295737
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Neural Network and Fuzzy Network
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 7.375543401841071
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Standard Model
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.199492816747966
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1001
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.431152926413517
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1001
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 7.734236330363082
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 5.983360506965088
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 7.9228188033489815
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 6.765979610021809
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.270072639587454
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network
+ADDITIONAL TECHNIQUE USED: False
+-- FINAL RESULT: 7.612148981745179
+
+ ------------------------------ 
+SEED: 2
+STUDENT ID: 1000
+TECHNIQUE USED: Bayesian Network and Self-organising Maps
+ADDITIONAL TECHNIQUE USED: True
+-- FINAL RESULT: 8.020297669453882
+

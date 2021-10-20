@@ -5,7 +5,7 @@ seed = 2
 method = 0
 use_stereotype = True
 fuzzy_used = False
-num_learning = 10
+num_learning = 20
 
 def useBayesian(sid):
     use_stereotype = False
@@ -16,8 +16,7 @@ def useBayesian(sid):
         studentModel.learn()
 
     final_knowledge = studentModel.finalTotalKnowledge(0)
-    print("-------------- final_knowledge ----------------")
-    print(final_knowledge)
+   
     writeToFile(sid, final_knowledge, 'Bayesian Network', use_stereotype, seed)
     use_stereotype = True
     studentSimulator = StudentSimulator(seed)
@@ -27,8 +26,7 @@ def useBayesian(sid):
         studentModel.learn()
 
     final_knowledge = studentModel.finalTotalKnowledge(0)
-    print("-------------- final_knowledge ----------------")
-    print(final_knowledge)
+
     writeToFile(sid, final_knowledge, 'Bayesian Network and Self-organising Maps', use_stereotype, seed)
 
 
@@ -42,8 +40,7 @@ def useNeuralNetwork(sid):
         studentModel.learn()
 
     final_knowledge = studentModel.finalTotalKnowledge(0)
-    print("-------------- final_knowledge ----------------")
-    print(final_knowledge)
+
     writeToFile(sid, final_knowledge, 'Neural Network', use_fuzzy, seed)
 
     use_fuzzy = True
@@ -55,8 +52,7 @@ def useNeuralNetwork(sid):
         studentModel.learn()
 
     final_knowledge = studentModel.finalTotalKnowledge(0)
-    print("-------------- final_knowledge ----------------")
-    print(final_knowledge)
+
     writeToFile(sid, final_knowledge, 'Neural Network and Fuzzy Network', use_fuzzy, seed)
 
 def useStandard(sid):
@@ -68,8 +64,7 @@ def useStandard(sid):
         studentModel.learn()
 
     final_knowledge = studentModel.finalTotalKnowledge(0)
-    print("-------------- final_knowledge ----------------")
-    print(final_knowledge)
+  
     writeToFile(sid, final_knowledge, 'Standard Model', use_stereotype, seed)
 
 def writeToFile(sid, result, technique, additional_used, seed):
