@@ -15,8 +15,8 @@ class Fuzzy:
         self.FS.add_linguistic_variable("stereotype", LinguisticVariable([S_1, S_2, S_3, S_4], concept="Stereotype Prediction"))
 
         self.FS.set_crisp_output_value("low", 0.33)
-        self.FS.set_crisp_output_value("medium", 0.50)
-        self.FS.set_crisp_output_value("high", 0.66)
+        self.FS.set_crisp_output_value("medium", 0.66)
+        self.FS.set_crisp_output_value("high", 0.75)
         self.FS.set_crisp_output_value("advanced", 1)
 
         # Define fuzzy rules
@@ -32,5 +32,4 @@ class Fuzzy:
     def predict(self, variable):
         self.FS.set_variable("stereotype", variable)
 
-        print(self.FS.Sugeno_inference(["Performance"])['Performance'])
         return self.FS.Sugeno_inference(["Performance"])['Performance']

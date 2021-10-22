@@ -69,7 +69,7 @@ class FuzzyKnowledgePredictor:
         FS.set_variable("test_success", 75)
 
         # Perform Sugeno inference and print output
-        print(FS.Sugeno_inference(["Knowledge"]))
+ 
         
         
         
@@ -112,4 +112,3 @@ class FuzzyKnowledgePredictor:
         FS.set_variable("topicTest", 75)
 
         # Perform Sugeno inference and print output
-        print(FS.Sugeno_inference(["Performance"]))

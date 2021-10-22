@@ -6,8 +6,7 @@ class DynamicKnowledge:
     def __init__(self, id, method,stereotype = False, fuzzy = False):
         self.student_id = id
         self.fuzzy_used = fuzzy
-        if self.fuzzy_used == True:
-            self.fuzzy = Fuzzy()
+      
         self.StudentKnowledge = StudentKnowledge(self.student_id, method, stereotype, self.fuzzy_used)
 
     def getNextConcept(self):

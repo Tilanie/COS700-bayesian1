@@ -79,7 +79,7 @@ class FuzzyLearningStylePredictor:
         FS.set_variable("visitsdoc", 75)
 
         # Perform Sugeno inference and print output
-        print(FS.Sugeno_inference(["student"]))
+     
         
         
   

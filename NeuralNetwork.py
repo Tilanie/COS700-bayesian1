@@ -9,16 +9,13 @@ from keras.models import Sequential
 from keras.layers import Dense
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from Fuzzy import Fuzzy
 import json
 import csv
 class NeuralNetwork:
     def __init__(self, id, fuzzy = False):
         self.student_id = id
         self.concepts = []
-        self.fuzzy_used = fuzzy
-        if self.fuzzy_used == True:
-            self.fuzzy = Fuzzy()
+      
         # load the dataset
         dataset = dataset = pd.read_csv('TestData/studentTestData.csv', delimiter=',')
         # To remove the scientific notation from numpy arrays
@@ -77,8 +74,7 @@ class NeuralNetwork:
 
         APE=100*(abs(TestingData['Known']-TestingData['PredictedKnown'])/TestingData['Known'])
         TestingData['APE']=APE
-        
-        print('The Accuracy of ANN model is:', 100-np.mean(APE))
+    
 
         
 
@@ -90,8 +86,7 @@ class NeuralNetwork:
         ynew = self.TargetVarScaler.inverse_transform(ynew) 
         Xnew = self.PredictorScalerFit.inverse_transform(Xnew)
         score = ynew[0][0]
-        if self.fuzzy_used == True:
-            score = self.fuzzy.predict(ynew[0][0])
+     
         return score
 
     def getConcept(self):
@@ -116,7 +111,7 @@ class NeuralNetwork:
         self.data = json.load(f)
         self.concepts = []
         for i in self.data['concepts']:
-            if i['learnt'] == 0 and i['known'] < 1:
+            if i['known'] < 1:
                 self.concepts.append(i)
 
     

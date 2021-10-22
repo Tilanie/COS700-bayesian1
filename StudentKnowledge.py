@@ -13,8 +13,7 @@ class StudentKnowledge:
         self.data = None
         self.concepts = []
         self.fuzzy_used = fuzzy
-        if self.fuzzy_used == True:
-            self.fuzzy = Fuzzy()
+
         if method == 0: 
             self.predictor = Bayesian(self.student_id, stereotype)
   
@@ -48,9 +47,9 @@ class StandardPredictor:
     def getConcept(self):
         self.concepts = self.getNextConcepts()
         nextConcept = self.concepts[0]
-        for c in self.concepts:
-            if c['known'] > nextConcept['known']:
-                nextConcept = c
+        # for c in self.concepts:
+        #     if c['known'] > nextConcept['known']:
+        #         nextConcept = c
     
         return nextConcept
 
@@ -60,29 +59,27 @@ class StandardPredictor:
         self.data = json.load(f)
         self.level = self.findAvailableLevel()
         self.concepts = []
-        use_level = self.level
-        num_tries = 0
-        decreasing = False
+        # use_level = self.level
+        # num_tries = 0
+        # decreasing = False
         while len(self.concepts) == 0:
             for i in self.data['concepts']:
-                if use_level < 27:
-                    if i['sequence'] == use_level + 1 and i['learnt'] == 0 and i['known'] < 1:
+                if i['learnt'] < 2 and i['known'] < 1:
                         self.concepts.append(i)
-                else:
-                    if i['sequence'] == use_level and i['learnt'] == 0 and i['known'] < 1:
-                        self.concepts.append(i)
-            if use_level == 0:
-                use_level = use_level + 1
-            else:
-                if decreasing == True:
-                    use_level = use_level - 1
-                else:
-                    use_level = use_level + 1
-            num_tries = num_tries + 1
+                    
+            
+            # if use_level == 0:
+            #     use_level = use_level + 1
+            # else:
+            #     if use_level == 27:
+            #         use_level = 0
+            #     else:
+            #         use_level = use_level + 1
+            # num_tries = num_tries + 1
 
-            if num_tries > 26:
-                num_tries = 0
-                decreasing = not decreasing
+            # if num_tries > 26:
+            #     num_tries = 0
+            #     decreasing = not decreasing
         return self.concepts
 
     def findAvailableLevel(self):

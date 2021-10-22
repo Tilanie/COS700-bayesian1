@@ -1,27 +1,30 @@
 from StudentModel import StudentModel
 from StudentSimulator import StudentSimulator
 from NeuralNetwork import NeuralNetwork
-seed = 2
+seed = 4
 method = 0
 use_stereotype = True
 fuzzy_used = False
-num_learning = 20
+num_learning = 50
 
 def useBayesian(sid):
     use_stereotype = False
     studentSimulator = StudentSimulator(seed)
     studentSimulator.generateStudentData()
     studentModel = StudentModel("Tilanie", int(sid), "tbresler", "pass", "t@gmail.com", "English", "Pretoria", "SA", seed, 0, use_stereotype)
+    wait = ("before learning bayesian network")
     for i in range(0, num_learning):
         studentModel.learn()
 
     final_knowledge = studentModel.finalTotalKnowledge(0)
    
     writeToFile(sid, final_knowledge, 'Bayesian Network', use_stereotype, seed)
+
     use_stereotype = True
     studentSimulator = StudentSimulator(seed)
     studentSimulator.generateStudentData()
     studentModel = StudentModel("Tilanie", int(sid), "tbresler", "pass", "t@gmail.com", "English", "Pretoria", "SA", seed, 0, use_stereotype)
+    # wait = input("before learning bayesian network WITH knn")
     for i in range(0, num_learning):
         studentModel.learn()
 
@@ -36,10 +39,12 @@ def useNeuralNetwork(sid):
     studentSimulator = StudentSimulator(seed)
     studentSimulator.generateStudentData()
     studentModel = StudentModel("Tilanie", int(sid), "tbresler", "pass", "t@gmail.com", "English", "Pretoria", "SA", seed, 1, use_stereotype, use_fuzzy)
+    # wait = input("before learning neural network")
     for i in range(0, num_learning):
         studentModel.learn()
 
     final_knowledge = studentModel.finalTotalKnowledge(0)
+
 
     writeToFile(sid, final_knowledge, 'Neural Network', use_fuzzy, seed)
 
@@ -48,10 +53,12 @@ def useNeuralNetwork(sid):
     studentSimulator = StudentSimulator(seed, use_fuzzy)
     studentSimulator.generateStudentData()
     studentModel = StudentModel("Tilanie", int(sid), "tbresler", "pass", "t@gmail.com", "English", "Pretoria", "SA", seed, 1, use_stereotype, use_fuzzy)
+
     for i in range(0, num_learning):
         studentModel.learn()
 
     final_knowledge = studentModel.finalTotalKnowledge(0)
+
 
     writeToFile(sid, final_knowledge, 'Neural Network and Fuzzy Network', use_fuzzy, seed)
 
@@ -60,6 +67,7 @@ def useStandard(sid):
     studentSimulator.generateStudentData()
     use_stereotype = False
     studentModel = StudentModel("Tilanie", int(sid), "tbresler", "pass", "t@gmail.com", "English", "Pretoria", "SA", seed, 2, use_stereotype)
+    
     for i in range(0, num_learning):
         studentModel.learn()
 
@@ -68,7 +76,7 @@ def useStandard(sid):
     writeToFile(sid, final_knowledge, 'Standard Model', use_stereotype, seed)
 
 def writeToFile(sid, result, technique, additional_used, seed):
-    f = open("Results/data2.txt", "a")
+    f = open("Results/data" + str(seed) + ".txt", "a")
     f.write(" ------------------------------ \n")
     f.write("SEED: " + str(seed))
     f.write('\n')

@@ -1,6 +1,5 @@
 from KNearestNeighbour import KNearestNeighbour
 import json
-from Fuzzy import Fuzzy
 import copy
 import os.path
 class SkillPredictor:
@@ -9,7 +8,7 @@ class SkillPredictor:
         self.user_id = id
   
         self.knn = KNearestNeighbour()
-        self.fuzzy = Fuzzy()
+     
         
     def predictSkillStandard(self):
         file_exists = os.path.exists('StudentKnowledge/KnowledgeMapLearnt' + str(self.user_id) + '.json')
@@ -54,7 +53,7 @@ class SkillPredictor:
             if data['concepts'][i]["terminal"] == 1:
                 level = self.knn.predict(self.getUserData(data['concepts'][i]["id"]), data['concepts'][i]["id"])
               
-                known = self.encodeSkillLevel(level) * 1.2
+                known = self.encodeSkillLevel(level) * 1.5
             
                 data['concepts'][i]['probability_true'] = copy.deepcopy([known])
                 data['concepts'][i]['known'] = known
@@ -65,7 +64,7 @@ class SkillPredictor:
                 # print(self.getUserData(data['concepts'][i]["id"]))
                 # print(data['concepts'][i]["id"])
                 # print(level)
-                known = self.encodeSkillLevel(level) * 1.2
+                known = self.encodeSkillLevel(level) * 1.5
                 # print(known)
                 data['concepts'][i]['known'] = copy.deepcopy(known)
     

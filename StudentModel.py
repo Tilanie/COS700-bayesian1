@@ -1,10 +1,10 @@
+from Fuzzy import Fuzzy
 from StaticKnowledge import StaticKnowledge
 from DynamicKnowledge import DynamicKnowledge
 import json
 import random
 import csv
 import pandas as pd
-from Fuzzy import Fuzzy
 
 class StudentModel:
     def __init__(self, name, id, username, password, email, language, city, country, seed, method, stereotype = False, fuzzy = False):
@@ -12,12 +12,16 @@ class StudentModel:
         self.id = id
         self.method = method
         self.static_knowledge = StaticKnowledge(name, id, username, password, email, language, city, country)
-        self.dynamic_knowledge = DynamicKnowledge(id, method, stereotype)
+        self.dynamic_knowledge = DynamicKnowledge(id, method, stereotype, fuzzy)
         self.starting_knowledge = 0
         self.setTotalKnowledge()
         self.fuzzy_used = fuzzy
         if self.fuzzy_used == True:
             self.fuzzy = Fuzzy()
+
+
+    def setInitialKnowledge(self):
+        pass
 
     def setTotalKnowledge(self):
         f = open('StudentKnowledge/KnowledgeMapLearnt' + str(self.id) + '.json',)
@@ -29,6 +33,7 @@ class StudentModel:
             
 
         self.starting_knowledge = total_data
+  
         f.close()
 
     def finalTotalKnowledge(self, method):
@@ -38,13 +43,17 @@ class StudentModel:
         if method == 0: # total improvement across all concepts
             for i in data['concepts']:
                 total_data = total_data + i['known']
+            f.close()
+     
             return total_data - self.starting_knowledge
         elif method == 1: # percentage improvement
             for i in data['concepts']:
                 total_data = total_data + i['known']
+            f.close()
+         
             return (total_data - self.starting_knowledge) / self.starting_knowledge
        
-        f.close()
+        
 
     def predictStudentKnowledge(self, concept):
         vals = self.dynamic_knowledge.predictStudentKnowledge(concept)
@@ -58,10 +67,10 @@ class StudentModel:
     def learn(self):
         
         concept = self.getNextConcept()
-    
+        # print(concept)
         # wait = input("before learning")
         concept = self.learnConcept(concept)
-     
+
         actual_concept = self.findConceptFromBayesianConcept(concept)
         self.updateTestScores(concept, actual_concept)
         # wait = input("after learning")
@@ -74,7 +83,6 @@ class StudentModel:
                 return i
 
     def learnConcept(self, concept):
-     
         sid = self.id
         f = open('StudentKnowledge/KnowledgeMapLearnt' + str(sid) + '.json',)
         self.knowledge = json.load(f)
@@ -85,15 +93,11 @@ class StudentModel:
         concept['learnt'] = concept['learnt'] + 1
 
         for i in self.knowledge['concepts']: 
-      
             if str(i['id']) == str(concept['id']):
-                
-                
+              
                 i['known'] = i['known'] + increase
-           
-                # i['probability_true'] = i['known']
-                # i['probability_false'] = 1 - i['probability_true']
                 i['learnt'] = i['learnt'] + 1
+         
   
 
         with open('StudentKnowledge/KnowledgeMapLearnt' + str(sid) + '.json', 'w') as outfile:
@@ -107,9 +111,6 @@ class StudentModel:
         for i in self.knowledge['concepts']: 
             
             if str(i['id']) == str(concept['id']):
-                
-                # i['probability_true'] = i['known']
-                # i['probability_false'] = 1 - i['probability_true']
                 i['known'] = i['known'] + increase
                 i['learnt'] = i['learnt'] + 1
               
@@ -122,10 +123,11 @@ class StudentModel:
     def levelOfIncrease(self, currentKnowledge):
         self.seed = self.seed + 1
         random.seed(self.seed)
-        range_ = 1 - currentKnowledge
-        number = random.uniform(currentKnowledge, currentKnowledge*1.5)
-        if number + currentKnowledge > 1:
-            number  = 1 - currentKnowledge
+     
+        number = random.uniform(.35 * currentKnowledge, .5 * currentKnowledge)
+        number = random.uniform(.5 * currentKnowledge, .6 * currentKnowledge, )
+        if self.fuzzy_used == True:
+            number = self.fuzzy.predict(currentKnowledge)
         return number
 
     def updateTestScores(self, concept, actual_concept):
@@ -158,8 +160,10 @@ class StudentModel:
                 new_row.append(test3)
                 new_row.append(int(concept['id']))
                 new_row.append(sequence)
+                # if self.fuzzy_used != True:
+                #     new_row.append(self.fuzzy.predict(chance_known))
+                # else:
                 new_row.append(chance_known)
-          
                 writer.writerow(new_row)
                     # close the file
                 
@@ -172,7 +176,7 @@ class StudentModel:
         self.seed = self.seed + 1 
         random.seed(self.seed)
         average = (test1 + test2 + test3) / 3
-        variance_value = random.uniform(-1 * (0.15 * average), 0.15 * average)
+        variance_value = random.uniform(-1 * (0.05 * average), 0.25 * average)
         test_value = average + variance_value
 
         return test_value

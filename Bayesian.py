@@ -17,7 +17,7 @@ class Bayesian:
             self.skillPredictor.predictSkill()
         else:
             self.skillPredictor.predictSkillStandard()
-    
+        # wait = input("knowledge iunitialised")
         self.student_id = id
         self.network = []
         self.cpd_list = []
@@ -144,7 +144,9 @@ class Bayesian:
         data = json.load(f)
         concepts = []
         for i in data['concepts']:
-            if i['learnt'] == 0 and i['known'] != 1:
+           
+
+            if i['known'] < 1:
                 concepts.append(i)
 
         return concepts

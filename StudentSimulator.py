@@ -16,8 +16,7 @@ class StudentSimulator:
         # self.studentIds = ['1000', '1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010', '1011', '1012', '1013', '1014', '1015', '1016']
         self.studentIds = ['9000', '9001']
         self.studentKnowledge = []
-        if fuzzy == True:
-            self.fuzzy = Fuzzy()
+        
         
 
     def createTestData(self):
@@ -32,8 +31,7 @@ class StudentSimulator:
 
     def generateStudentKnowledge(self):
         for sid in self.studentIds:
-            
-
+     
             file_exists = os.path.exists('StudentKnowledge/KnowledgeMapLearnt' + str(sid) + '.json')
 
             if file_exists == True:
@@ -60,7 +58,7 @@ class StudentSimulator:
                 # Concept ID	Gender	Age	SchoolClass	DegreeCarefulness	Proficiency
                 # if i['terminal'] == 1: #no dependancies
                 #     i['known'] = self.generateKnown()
-                known = self.getTestValuesAverageConcept(sid, i['id'])
+                known = proficiency
                 i['known'] = known
                 
           
@@ -97,20 +95,18 @@ class StudentSimulator:
                 json.dump(self.knowledgeInternal, outfile)
             
             self.studentKnowledge.append(self.knowledgeInternal)
+        # wait = input("END student simulator generate student model")
             
     def getTestValuesAverageConcept(self, id, concept):
         self.dataset = pd.read_csv('TestData/student' + str(id), delimiter=',', header=None)
    
         for row in self.dataset.values:
-           
+        
             if int(row[3]) == int(concept):
                 average = (row[0] + row[1] + row[2] + row[5]) / 4
                 
       
-        if self.fuzzy_used == True:
-            average = average * 2.0
-           
-            average = self.fuzzy.predict(average) + 0.30
+      
          
         return average
         
